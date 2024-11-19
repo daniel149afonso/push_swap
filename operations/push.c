@@ -1,46 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/19 16:04:42 by daafonso         ###   ########.fr       */
+/*   Created: 2024/11/19 16:04:08 by daafonso          #+#    #+#             */
+/*   Updated: 2024/11/19 20:05:12 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*ft_checker(char **tab, int size)
+void	ft_push(int *stack_a, int *stack_b)
 {
 	int	i;
 	int	j;
-	int	nbr;
-	int	*elems;
 
-	elems = malloc((size - 1) * sizeof(int));
-	if (!elems)
-		return (0);
-	i = 1;
-	j = 0;
-	while (i < size)
+	i = 0;
+	j = 1;
+	stack_b[i] = stack_a[i];
+	while (stack_a[j])
 	{
-		nbr = ft_atoi(tab[i]);
-		elems[j] = nbr;
-		printf("%d\n", elems[j]);
-		i++;
-		j++;
+		stack_a[i] = stack_a[j];
+		while (stack_a[j])
+		{
+			stack_a[i] = stack_a[j];
+			i++;
+			j++;
+		}
 	}
-	return (tab);
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		ft_checker(argv, argc);
-
-	}
-	return (0);
 }
