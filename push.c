@@ -3,31 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:04:08 by daafonso          #+#    #+#             */
-/*   Updated: 2024/11/19 20:05:12 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/11/21 15:00:58 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push(int *stack_a, int *stack_b)
+void	push(t_stack **src, t_stack **dest)
 {
-	int	i;
-	int	j;
+	t_stack	*tmp;
 
-	i = 0;
-	j = 1;
-	stack_b[i] = stack_a[i];
-	while (stack_a[j])
-	{
-		stack_a[i] = stack_a[j];
-		while (stack_a[j])
-		{
-			stack_a[i] = stack_a[j];
-			i++;
-			j++;
-		}
-	}
+	if (!(*src))
+		return ;
+	tmp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = tmp;
+
 }
+
+void	do_pa(t_stack **stack_a, t_stack **stack_b)
+{
+	push(stack_b, stack_a);
+	ft_putstr_fd("pa\n", 1);
+}
+
+void	do_pb(t_stack **stack_a, t_stack **stack_b)
+{
+	push(stack_a, stack_b);
+	ft_putstr_fd("pb\n", 1);
+}
+

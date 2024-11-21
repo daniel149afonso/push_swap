@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:37:28 by daafonso          #+#    #+#             */
-/*   Updated: 2024/11/18 18:08:55 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/11/20 14:51:23 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "push_swap.h"
 
 int	ft_atoi(const char *str)
 {

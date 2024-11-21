@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/21 14:58:08 by daniel149af      ###   ########.fr       */
+/*   Created: 2024/10/20 15:45:05 by daafonso          #+#    #+#             */
+/*   Updated: 2024/11/21 13:43:59 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-int	main(int argc, char **argv)
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
 {
-	if (argc > 1)
-	{
-
-	}
-	return (0);
+	new->next = *lst;
+	*lst = new;
 }
+//BUT: ajouter un nouvel elem de type t_list au debut
+//l'ancien premier elem devient le suivant
+//new->next = *lst; lst devient l'element suivant
+//*lst = new; new devient le premier element
