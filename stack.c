@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:45:15 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/21 16:22:32 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/11/24 20:49:54 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 t_stack	*stack_new(int value)
 {
@@ -25,15 +25,30 @@ t_stack	*stack_new(int value)
 	return (stack_a);
 }
 
-t_stack *stack_add_bottom(t_stack *stack_head, int value)
+void	stack_add_bottom(t_stack **stack_a, t_stack *new)
 {
 	t_stack	*stack_bottom;
 
-	stack_bottom = malloc(sizeof(t_stack));
-	if (!stack_bottom)
-		return (NULL);
-	stack_head->next = stack_bottom;
-	stack_bottom->number = value;
-	stack_bottom->next = NULL;
-	return (stack_head);
+	if (!new)
+		return ;
+	stack_bottom = get_stack_bottom(*stack_a);
+	stack_bottom->next = new;
+}
+
+t_stack	*get_stack_bottom(t_stack *stack_a)
+{
+	while (stack_a && stack_a->next != NULL)
+	{
+		stack_a = stack_a->next;
+	}
+	return (stack_a);
+}
+
+t_stack	*get_stack_before_bottom(t_stack *stack_a)
+{
+	while (stack_a && stack_a->next->next != NULL)
+	{
+		stack_a = stack_a->next;
+	}
+	return (stack_a);
 }

@@ -1,22 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 15:37:28 by daafonso          #+#    #+#             */
-/*   Updated: 2024/11/20 14:51:23 by daniel149af      ###   ########.fr       */
+/*   Created: 2024/11/22 15:16:30 by daniel149af       #+#    #+#             */
+/*   Updated: 2024/11/24 21:12:16 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+void	error_exit(t_stack **stack_a)
 {
-	int	i;
-	int	sign;
-	int	result;
+	if (*stack_a)
+		free_stack(stack_a);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+}
+
+void	free_stack(t_stack **stack_a)
+{
+	t_stack	*tmp;
+
+	while (*stack_a)
+	{
+		tmp = (*stack_a)->next;
+		free(*stack_a);
+		*stack_a = tmp;
+	}
+	*stack_a = NULL;
+}
+
+long	ft_atoi(const char *str)
+{
+	int		i;
+	int		sign;
+	long	result;
 
 	i = 0;
 	sign = 1;
@@ -41,15 +62,12 @@ int	ft_atoi(const char *str)
 	return (result *= sign);
 }
 
-/*int	main(int argc, char **argv)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (argc == 2)
-		printf("%d\n", ft_atoi(argv[1]));
-	return (0);
-}*/
-/*
-BUT: Convertit une chaîne de caractères en un entier.
-Elle ignore les espaces blancs au début de la chaîne,
- traite les signes (positif ou négatif),
-  et convertit la séquence numérique en entier
-*/
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	write(fd, s, i);
+}

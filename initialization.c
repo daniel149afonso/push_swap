@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:23:42 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/21 15:47:38 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/11/24 21:04:47 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_stack	*full_stack_values(char **strs)
 {
-	t_stack	*stack_a;
-	long	nb;
-	int		i;
+	t_stack		*stack_a;
+	long		nb;
+	int			i;
 
 	i = 1;
 	while (strs[i])
@@ -24,8 +24,8 @@ t_stack	*full_stack_values(char **strs)
 		nb = ft_atoi(strs[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
 		{
-			ft_putstr_fd("Error\n", 2);
-			return ;
+			printf("ERREURRRRR");
+			error_exit(&stack_a);
 		}
 		if (i == 1)
 			stack_a = stack_new((int)nb);
@@ -34,4 +34,17 @@ t_stack	*full_stack_values(char **strs)
 		i++;
 	}
 	return (stack_a);
+}
+
+int	get_size_stack(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
 }

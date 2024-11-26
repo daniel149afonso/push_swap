@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:42:07 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/21 16:13:46 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/11/25 16:22:49 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,23 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+//INITIALIZATION
+t_stack	*full_stack_values(char **strs);
+int		get_size_stack(t_stack *stack);
+
+//OPERATIONS
+void	do_pa(t_stack **stack_a, t_stack **stack_b);
+void	do_pb(t_stack **stack_a, t_stack **stack_b);
+
+//STACKS
+t_stack	*stack_new(int value);
+void	stack_add_bottom(t_stack **stack_a, t_stack *new);
+t_stack	*get_stack_bottom(t_stack *stack_a);
+
 //UTILS
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 void	ft_putstr_fd(char *s, int fd);
+void	error_exit(t_stack **stack_a);
+void	free_stack(t_stack **stack_a);
+
 #endif
