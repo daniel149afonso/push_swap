@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
+/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:04:08 by daafonso          #+#    #+#             */
-/*   Updated: 2024/11/25 19:59:00 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/11/26 19:33:58 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,6 @@ void	push(t_stack **src, t_stack **dest)
 
 	if (!(*src))
 		return ;
-	if (!(*dest))
-	{
-		tmp = (*src)->next;
-		(*src)->next = *dest;
-		*dest = *src;
-		*src = tmp;
-		(*dest)->next = NULL;
-	}
 	tmp = (*src)->next;
 	(*src)->next = *dest;
 	*dest = *src;

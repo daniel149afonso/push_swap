@@ -2,7 +2,7 @@ SRC = ...
 
 OBJS =	${SRC:.c=.o}
 
-GCC = 	ggc -Werror -Wall -Wextra
+GCC = 	gcc -Werror -Wall -Wextra
 
 RM = rm -rf
 

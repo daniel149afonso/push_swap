@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
+/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/25 19:18:23 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/11/26 16:16:53 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,11 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		stack_a = full_stack_values(argv);
-		do_pb(&stack_a, &stack_b);
-		ft_putlst(stack_a, stack_b);
+		if (check_sorted(stack_a))
+		{
+			do_pb(&stack_a, &stack_b);
+			ft_putlst(stack_a, stack_b);
+		}
 	}
 	return (0);
 }
