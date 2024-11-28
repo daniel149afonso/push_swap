@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/26 16:16:53 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:23:45 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	ft_putlst(t_stack *stack_a, t_stack *stack_b)
 	printf("Stack_a: ");
 	while (stack_a)
 	{
-		printf("%d, ", stack_a->number);
+		printf("%d ", stack_a->number);
 		stack_a = stack_a->next;
 	}
 	printf("Stack_b: ");
 	while (stack_b)
 	{
-		printf("%d, ", stack_b->number);
+		printf("%d ", stack_b->number);
 		stack_b = stack_b->next;
 	}
 	printf("\n");
@@ -38,9 +38,15 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		stack_a = full_stack_values(argv);
-		if (check_sorted(stack_a))
+		if (!is_sorted(stack_a))
 		{
 			do_pb(&stack_a, &stack_b);
+			ft_putlst(stack_a, stack_b);
+			do_pb(&stack_a, &stack_b);
+			ft_putlst(stack_a, stack_b);
+			do_pb(&stack_a, &stack_b);
+			ft_putlst(stack_a, stack_b);
+			do_ss(&stack_a, &stack_b);
 			ft_putlst(stack_a, stack_b);
 		}
 	}

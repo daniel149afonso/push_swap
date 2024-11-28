@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:16:30 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/26 15:49:38 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:18:48 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,21 +72,21 @@ void	ft_putstr_fd(char *s, int fd)
 	write(fd, s, i);
 }
 
-int	check_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
 	t_stack	*tmp;
-	int		is_sorted;
+	int		sorted;
 
-	is_sorted = 1;
+	sorted = 1;
 	tmp = stack;
 	while (tmp && tmp->next)
 	{
-		if (tmp->number < tmp->next->number)
+		if (tmp->next->number < tmp->number)
 		{
-			is_sorted = 0;
-			return (is_sorted);
+			sorted = 0;
+			return (sorted);
 		}
 		tmp = tmp->next;
 	}
-	return (is_sorted);
+	return (sorted);
 }

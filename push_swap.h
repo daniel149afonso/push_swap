@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:42:07 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/26 15:42:02 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:19:00 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,27 @@ int		get_size_stack(t_stack *stack);
 //OPERATIONS
 void	do_pa(t_stack **stack_a, t_stack **stack_b);
 void	do_pb(t_stack **stack_a, t_stack **stack_b);
+void	do_sa(t_stack **stack_a);
+void	do_sb(t_stack **stack_b);
+void	do_ss(t_stack **stack_a, t_stack **stack_b);
+void	do_ra(t_stack **stack_a);
+void	do_rb(t_stack **stack_b);
+void	do_rr(t_stack **stack_a, t_stack **stack_b);
+void	do_rra(t_stack **stack_a);
+void	do_rrb(t_stack **stack_b);
+void	do_rrr(t_stack **stack_a, t_stack **stack_b);
 
 //STACKS
 t_stack	*stack_new(int value);
 void	stack_add_bottom(t_stack **stack_a, t_stack *new);
 t_stack	*get_stack_bottom(t_stack *stack_a);
+t_stack	*get_stack_before_bottom(t_stack *stack_a);
 
 //UTILS
 long	ft_atoi(const char *str);
 void	ft_putstr_fd(char *s, int fd);
 void	error_exit(t_stack **stack_a);
 void	free_stack(t_stack **stack_a);
-int		check_sorted(t_stack *stack);
+int		is_sorted(t_stack *stack);
 
 #endif

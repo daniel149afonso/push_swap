@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 15:27:47 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/24 15:07:26 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/11/28 15:00:53 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	rotate(t_stack **stack)
 	if (!(*stack) || !((*stack)->next))
 		return ;
 	stack_head = *stack;
-	stack_bottom = get_stack_bottom(stack);
+	stack_bottom = get_stack_bottom(*stack);
 	stack_bottom->next = stack_head;
 	*stack = (*stack)->next;
 	stack_head->next = NULL;
