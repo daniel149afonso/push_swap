@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:16:30 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/28 15:18:48 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/11/30 14:22:31 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	is_sorted(t_stack *stack)
 	tmp = stack;
 	while (tmp && tmp->next)
 	{
-		if (tmp->next->number < tmp->number)
+		if (tmp->next->value < tmp->value)
 		{
 			sorted = 0;
 			return (sorted);

@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:42:07 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/28 15:19:00 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/01 20:30:41 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 //STACK TYPE
 typedef struct s_stack
 {
-	int				number;
+	int				value;
 	int				index;
 	struct s_stack	*next;
 }	t_stack;
@@ -33,6 +33,7 @@ typedef struct s_stack
 //INITIALIZATION
 t_stack	*full_stack_values(char **strs);
 int		get_size_stack(t_stack *stack);
+void	assign_index(t_stack *stack_a, int stack_size);
 
 //OPERATIONS
 void	do_pa(t_stack **stack_a, t_stack **stack_b);
@@ -46,6 +47,11 @@ void	do_rr(t_stack **stack_a, t_stack **stack_b);
 void	do_rra(t_stack **stack_a);
 void	do_rrb(t_stack **stack_b);
 void	do_rrr(t_stack **stack_a, t_stack **stack_b);
+
+//SORTS ALGO
+void	sort3(t_stack **stack_a);
+void	sort5(t_stack **stack_a, t_stack **stack_b);
+int		find_max(t_stack *stack_a);
 
 //STACKS
 t_stack	*stack_new(int value);

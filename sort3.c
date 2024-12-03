@@ -6,36 +6,50 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 19:42:29 by daafonso          #+#    #+#             */
-/*   Updated: 2024/11/28 14:56:35 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/01 23:22:31 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_highest(t_stack *stack_a)
+int	find_max(t_stack *stack_a)
 {
-	int		highest;
+	int		max;
 	t_stack	*tmp;
 
 	tmp = stack_a;
-	highest = tmp->number;
-	while (tmp && tmp->next)
+	max = tmp->value;
+	while (tmp)
 	{
-		if (tmp->next->number > tmp->number)
-		{
-			highest = tmp->next->number;
-		}
+		if (tmp->value > max)
+			max = tmp->value;
 		tmp = tmp->next;
 	}
-	return (highest);
+	return (max);
 }
 
-void	do_instruction(t_stack *stack_a)
+void	sort3(t_stack **stack_a)
 {
-	t_stack	*tmp;
-	int		highest;
+	int		max;
 
-	tmp = stack_a;
-	highest = find_highest(stack_a);
-	//if (highest == tmp)
+	if (!(*stack_a) || is_sorted(*stack_a))
+		return ;
+	max = find_max(*stack_a);
+	if (max == (*stack_a)->value)
+	{
+		do_ra(stack_a);
+		if ((*stack_a)->value > (*stack_a)->next->value)
+			do_sa(stack_a);
+	}
+	else if (max == (*stack_a)->next->value)
+	{
+		do_rra(stack_a);
+		if ((*stack_a)->value > (*stack_a)->next->value)
+			do_sa(stack_a);
+	}
+	else
+	{
+		if ((*stack_a)->value > (*stack_a)->next->value)
+			do_sa(stack_a);
+	}
 }

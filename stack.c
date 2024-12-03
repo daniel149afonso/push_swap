@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:45:15 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/24 20:49:54 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/11/30 14:22:39 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack	*stack_new(int value)
 	stack_a = malloc(sizeof(t_stack));
 	if (!stack_a)
 		return (NULL);
-	stack_a->number = value;
+	stack_a->value = value;
 	stack_a->index = 0;
 	stack_a->next = NULL;
 	return (stack_a);
