@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
+/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/08 17:33:51 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/09 17:45:59 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,35 +29,41 @@ void	ft_putlst(t_stack *stack_a, t_stack *stack_b)
 	printf("\n");
 }
 
+void	push_swap(t_stack **stack_a, t_stack **stack_b, char **argv)
+{
+	int		stack_size;
+
+	if (!check_input(argv))
+		return ;
+	*stack_a = full_stack_values(argv);
+	stack_size = get_size_stack(*stack_a);
+	if (!is_sorted(*stack_a))
+	{
+		assign_index(*stack_a, stack_size);
+		if (stack_size == 2)
+			do_sa(stack_a);
+		else if (stack_size == 3)
+			sort3(stack_a);
+		else if (stack_size <= 5)
+		{
+			printf("Sort5\n");
+			sort5(stack_a, stack_b);
+		}
+		else
+			sort_radix(stack_a, stack_b, stack_size);
+		ft_putlst(*stack_a, *stack_b);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		stack_size;
 
 	stack_b = NULL;
 	if (argc > 1)
 	{
-		stack_a = full_stack_values(argv);
-		stack_size = get_size_stack(stack_a);
-		if (!is_sorted(stack_a))
-		{
-			assign_index(stack_a, stack_size);
-			if (stack_size == 2)
-				do_sa(&stack_a);
-			else if (stack_size == 3)
-				sort3(&stack_a);
-			else if (stack_size <= 5)
-			{
-				printf("Sort5\n");
-				sort5(&stack_a, &stack_b);
-			}
-			else
-			{
-				sort_radix(&stack_a, &stack_b, stack_size);
-			}
-			ft_putlst(stack_a, stack_b);
-		}
+		push_swap(&stack_a, &stack_b, argv);
 	}
 	free_stack(&stack_a);
 	free_stack(&stack_b);

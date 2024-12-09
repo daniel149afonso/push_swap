@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
+/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:42:07 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/08 16:48:02 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/09 21:02:28 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,9 @@ void	ft_putstr_fd(char *s, int fd);
 void	error_exit(t_stack **stack_a);
 void	free_stack(t_stack **stack_a);
 int		is_sorted(t_stack *stack);
+char	**ft_split(char const *s, char c);
 
+//CHECK INPUTS
+int		check_input(char **strs);
+int		count_args(char **argv);
 #endif
