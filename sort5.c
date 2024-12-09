@@ -6,13 +6,13 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 18:49:58 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/02 19:16:23 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/08 16:49:08 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_min(t_stack *stack_a)
+int	find_min_value(t_stack *stack_a)
 {
 	int		min;
 	t_stack	*tmp;
@@ -69,31 +69,6 @@ void	check_pos(t_stack **stack_a, t_stack **stack_b, int value, int is_min)
 	}
 }
 
-// void	sort5(t_stack **stack_a, t_stack **stack_b)
-// {
-// 	int		max;
-// 	int		min;
-
-// 	if (!(*stack_a) || is_sorted(*stack_a))
-// 		return ;
-// 	min = find_min(*stack_a);
-// 	max = find_max(*stack_a);
-// 	check_pos(stack_a, stack_b, max, 0);
-// 	if (get_size_stack(*stack_a) == 3)
-// 	{
-// 		sort3(stack_a);
-// 		do_pa(stack_a, stack_b);
-// 	}
-// 	else
-// 	{
-// 		check_pos(stack_a, stack_b, min, 1);
-// 		sort3(stack_a);
-// 		do_pa(stack_a, stack_b);
-// 		do_pa(stack_a, stack_b);
-// 		do_ra(stack_a);
-// 	}
-// }
-
 void	sort5(t_stack **stack_a, t_stack **stack_b)
 {
 	int		max;
@@ -101,8 +76,8 @@ void	sort5(t_stack **stack_a, t_stack **stack_b)
 
 	if (!(*stack_a) || is_sorted(*stack_a))
 		return ;
-	min = find_min(*stack_a);
-	max = find_max(*stack_a);
+	min = find_min_value(*stack_a);
+	max = find_max_value(*stack_a);
 
 	// Si la pile contient 4 éléments, retirez seulement le minimum.
 	if (get_size_stack(*stack_a) == 4)

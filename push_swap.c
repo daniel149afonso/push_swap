@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/02 18:46:18 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/08 17:33:51 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,14 @@ int	main(int argc, char **argv)
 				printf("Sort5\n");
 				sort5(&stack_a, &stack_b);
 			}
+			else
+			{
+				sort_radix(&stack_a, &stack_b, stack_size);
+			}
 			ft_putlst(stack_a, stack_b);
 		}
 	}
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:42:07 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/01 20:30:41 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/08 16:48:02 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	do_rrr(t_stack **stack_a, t_stack **stack_b);
 //SORTS ALGO
 void	sort3(t_stack **stack_a);
 void	sort5(t_stack **stack_a, t_stack **stack_b);
-int		find_max(t_stack *stack_a);
+void	sort_radix(t_stack **stack_a, t_stack **stack_b, int size_stack);
+int		find_max_value(t_stack *stack_a);
 
 //STACKS
 t_stack	*stack_new(int value);
