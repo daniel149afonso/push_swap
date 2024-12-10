@@ -6,7 +6,7 @@
 /*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:42:07 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/09 21:02:28 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/12/10 17:45:02 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	error_exit(t_stack **stack_a);
 void	free_stack(t_stack **stack_a);
 int		is_sorted(t_stack *stack);
 char	**ft_split(char const *s, char c);
+void	free_split(char **split);
 
 //CHECK INPUTS
 int		check_input(char **strs);

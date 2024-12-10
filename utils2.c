@@ -6,7 +6,7 @@
 /*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:38:17 by daafonso          #+#    #+#             */
-/*   Updated: 2024/12/09 16:48:44 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/12/10 17:44:41 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,17 @@ int	count_args(char **argv)
 		i++;
 	}
 	return (i);
+}
+
+void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
 }

@@ -6,32 +6,22 @@
 /*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/09 21:03:25 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/12/10 17:50:39 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_digit(char c)
-{
-	return (c >= '0' && c <= '9');
-}
-
-int	is_sign(char c)
-{
-	return (c == '-' || c == '+');
-}
 
 int	check_nbr(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (is_sign(str[i]))
+	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i])
 	{
-		if (!is_digit(str[i]))
+		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
 		i++;
 	}
@@ -51,7 +41,7 @@ int	check_doubles(char **strs)
 		j = i + 1;
 		while (j < len)
 		{
-			printf("Checking: '%s' comparé avec '%s'\n", strs[i], strs[j]);
+			//printf("Checking: '%s' comparé avec '%s'\n", strs[i], strs[j]);
 			if (ft_atoi(strs[i]) == ft_atoi(strs[j]))
 				return (1);
 			j++;
@@ -61,16 +51,39 @@ int	check_doubles(char **strs)
 	return (0);
 }
 
+int	single_string(char **strs)
+{
+	int		i;
+	char	**split;
+
+	i = 0;
+	split = ft_split(strs[1], ' ');
+	while (split[i])
+	{
+		if (!check_nbr(split[i]))
+		{
+			ft_putstr_fd("Error\n", 2);
+			return (0);
+		}	
+		i++;
+	}
+	if (check_doubles(split))
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (0);
+	}
+	return (1);
+}
+
 int	check_input(char **strs)
 {
 	int		i;
-	char	**tmp;
+	int		split_used;
 
-	i = 1;
-	if (argc == 2)
-	{
-		tmp = ft_split(strs[1], ' ');
-	}
+	i = 0;
+	split_used = 0;
+	if (count_args(strs) == 2)
+		return (single_string(strs));
 	while (strs[i])
 	{
 		if (!check_nbr(strs[i]))
@@ -85,7 +98,13 @@ int	check_input(char **strs)
 		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
+	if (split_used)
+		free_split(strs); //Probleme attention tu dois free split autrement !!
 	return (1);
 }
 //BUT: Checker les inputs
 //ATTENTION on commence avec i = 1 car on veut exclure le a.out!!!!!
+//for (int i = 0; i < count_args(strs); i++)
+	// {
+	// 	printf("%s ", split[i]);
+	// }
