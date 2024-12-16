@@ -3,26 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:59:32 by daafonso          #+#    #+#             */
-/*   Updated: 2024/12/10 16:11:56 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/12/16 21:44:39 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
-}
 
 void	ft_freeall(char **s)
 {
@@ -79,6 +67,18 @@ static char	*fill_word(const char *s, char c)
 	}
 	word[i] = '\0';
 	return (word);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)

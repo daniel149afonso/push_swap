@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/09 17:45:59 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/12/16 21:06:12 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putlst(t_stack *stack_a, t_stack *stack_b)
 	printf("Stack_a: ");
 	while (stack_a)
 	{
-		printf("%d , ", stack_a->value);
+		printf("%d ,", stack_a->value);
 		stack_a = stack_a->next;
 	}
 	printf("\nStack_b: ");
@@ -33,8 +33,7 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, char **argv)
 {
 	int		stack_size;
 
-	if (!check_input(argv))
-		return ;
+	check_input(argv);
 	*stack_a = full_stack_values(argv);
 	stack_size = get_size_stack(*stack_a);
 	if (!is_sorted(*stack_a))
@@ -45,14 +44,11 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, char **argv)
 		else if (stack_size == 3)
 			sort3(stack_a);
 		else if (stack_size <= 5)
-		{
-			printf("Sort5\n");
 			sort5(stack_a, stack_b);
-		}
 		else
 			sort_radix(stack_a, stack_b, stack_size);
-		ft_putlst(*stack_a, *stack_b);
 	}
+	ft_putlst(*stack_a, *stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -64,8 +60,8 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		push_swap(&stack_a, &stack_b, argv);
+		free_stack(&stack_a);
+		free_stack(&stack_b);
 	}
-	free_stack(&stack_a);
-	free_stack(&stack_b);
 	return (0);
 }

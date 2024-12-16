@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   valid_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/10 17:50:39 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/12/16 21:45:28 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,13 @@ int	check_doubles(char **strs)
 	int	j;
 	int	len;
 
-	i = 1;
+	i = 0;
 	len = count_args(strs);
 	while (i < len)
 	{
 		j = i + 1;
 		while (j < len)
 		{
-			//printf("Checking: '%s' comparé avec '%s'\n", strs[i], strs[j]);
 			if (ft_atoi(strs[i]) == ft_atoi(strs[j]))
 				return (1);
 			j++;
@@ -51,60 +50,58 @@ int	check_doubles(char **strs)
 	return (0);
 }
 
-int	single_string(char **strs)
+int	validate_args(char **args)
 {
-	int		i;
-	char	**split;
+	int	i;
 
 	i = 0;
-	split = ft_split(strs[1], ' ');
-	while (split[i])
+	while (args[i])
 	{
-		if (!check_nbr(split[i]))
-		{
-			ft_putstr_fd("Error\n", 2);
+		if (!check_nbr(args[i]))
 			return (0);
-		}	
 		i++;
 	}
-	if (check_doubles(split))
-	{
-		ft_putstr_fd("Error\n", 2);
+	if (check_doubles(args) == 1)
 		return (0);
-	}
 	return (1);
 }
 
-int	check_input(char **strs)
+char	**preprocess_args(char **strs, int *split_used)
 {
-	int		i;
+	if (count_args(strs) == 2)
+	{
+		*split_used = 1;
+		return (ft_split(strs[1], ' '));
+	}
+	*split_used = 0;
+	return (strs + 1);
+}
+
+void	check_input(char **strs)
+{
+	char	**tmp;
 	int		split_used;
+	long	nb;
+	int		i;
 
 	i = 0;
-	split_used = 0;
-	if (count_args(strs) == 2)
-		return (single_string(strs));
-	while (strs[i])
+	tmp = preprocess_args(strs, &split_used);
+	if (!tmp)
+		error_exit();
+	while (tmp[i])
 	{
-		if (!check_nbr(strs[i]))
+		nb = ft_atoi(tmp[i]);
+		if ((nb > INT_MAX || nb < INT_MIN) || !validate_args(tmp))
 		{
-			ft_putstr_fd("Error\n", 2);
-			return (0);
-		}	
+			if (split_used)
+				free_split(tmp);
+			error_exit();
+		}
 		i++;
-	}
-	if (check_doubles(strs))
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (0);
 	}
 	if (split_used)
-		free_split(strs); //Probleme attention tu dois free split autrement !!
-	return (1);
+		free_split(tmp);
 }
+
 //BUT: Checker les inputs
 //ATTENTION on commence avec i = 1 car on veut exclure le a.out!!!!!
-//for (int i = 0; i < count_args(strs); i++)
-	// {
-	// 	printf("%s ", split[i]);
-	// }

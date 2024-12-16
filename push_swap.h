@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:42:07 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/10 17:45:02 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/12/16 21:30:36 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,16 @@ t_stack	*get_stack_before_bottom(t_stack *stack_a);
 //UTILS
 long	ft_atoi(const char *str);
 void	ft_putstr_fd(char *s, int fd);
-void	error_exit(t_stack **stack_a);
-void	free_stack(t_stack **stack_a);
 int		is_sorted(t_stack *stack);
 char	**ft_split(char const *s, char c);
-void	free_split(char **split);
+void	ft_putlst(t_stack *stack_a, t_stack *stack_b);//a supprimer
 
 //CHECK INPUTS
-int		check_input(char **strs);
+void	check_input(char **strs);
 int		count_args(char **argv);
+
+//FREE AND ERROR
+void	error_exit(void);
+void	free_split(char **split);
+void	free_stack(t_stack **stack_a);
 #endif

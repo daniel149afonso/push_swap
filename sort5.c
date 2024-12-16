@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 18:49:58 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/08 16:49:08 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/16 21:43:21 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	get_position_value(t_stack *stack_a, int value)
 		tmp = tmp->next;
 		i++;
 	}
-	printf("Valeur: %d  a la position: %d \n", value, i);
 	return (i);
 }
 
@@ -78,24 +77,24 @@ void	sort5(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	min = find_min_value(*stack_a);
 	max = find_max_value(*stack_a);
-
-	// Si la pile contient 4 éléments, retirez seulement le minimum.
 	if (get_size_stack(*stack_a) == 4)
 	{
 		check_pos(stack_a, stack_b, min, 1);
 		sort3(stack_a);
-		do_pa(stack_a, stack_b); // Replacez le minimum à sa position
-		return;
+		do_pa(stack_a, stack_b);
 	}
-
-	// Si la pile contient 5 éléments, retirez d'abord le maximum puis le minimum.
-	check_pos(stack_a, stack_b, max, 0);
-	check_pos(stack_a, stack_b, min, 1);
-	sort3(stack_a);
-
-	// Replacez le minimum et le maximum dans l'ordre correct.
-	do_pa(stack_a, stack_b);
-	do_pa(stack_a, stack_b);
-	do_ra(stack_a);
+	else
+	{
+		check_pos(stack_a, stack_b, max, 0);
+		check_pos(stack_a, stack_b, min, 1);
+		sort3(stack_a);
+		do_pa(stack_a, stack_b);
+		do_pa(stack_a, stack_b);
+		do_ra(stack_a);
+	}
 }
 
+//BUT: Trier une pile de 4 ou 5
+// Si la pile contient 4 éléments, retirez seulement le minimum.
+// Si la pile contient 5 éléments, retirez d'abord le maximum puis le minimum.
+// Replacez le minimum et le maximum dans l'ordre correct.
