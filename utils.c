@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:16:30 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/14 14:54:36 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/18 18:09:52 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,3 +85,15 @@ int	is_sorted(t_stack *stack)
 	}
 	return (sorted);
 }
+
+int	is_empty_string(const char *str)
+{
+	while (*str)
+	{
+		if (!(*str == ' ' || (*str >= 9 && *str <= 13)))
+			return (0);
+		str++;
+	}
+	return (1);
+}
+//Is_empty_string: verifie si la chaine vide ou seulement espaces

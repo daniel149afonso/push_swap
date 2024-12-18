@@ -6,7 +6,7 @@
 /*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/18 18:12:18 by daafonso         ###   ########.fr       */
+/*   Updated: 2024/12/18 18:37:10 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,17 +104,5 @@ void	check_input(char **strs)
 	if (split_used)
 		free_split(tmp);
 }
-
-// void	ft_pustrs()
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while ()
-// 	{
-// 		/* code */
-// 	}
-
-// }
 //BUT: Checker les inputs
 //ATTENTION on commence avec i = 1 car on veut exclure le a.out!!!!!
