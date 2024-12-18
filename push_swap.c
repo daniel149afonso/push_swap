@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/17 20:31:16 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/18 18:26:51 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,16 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
+	stack_a = NULL;
 	stack_b = NULL;
-	if (argv[1][0] == '\0')
-		error_exit();
 	if (argc > 1)
 	{
+		if (argv[1][0] == '\0' || is_empty_string(argv[1]))
+			error_exit();
 		push_swap(&stack_a, &stack_b, argv);
 		free_stack(&stack_a);
 		free_stack(&stack_b);
 	}
 	return (0);
 }
-//Main: verifie si une chaine vide est passée ""
+//Main: verifie si une chaine vide ou remplie d'espaces est passée ""
