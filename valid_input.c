@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/16 21:45:28 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/17 19:31:23 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	check_nbr(char *str)
 	int	i;
 
 	i = 0;
-	if (str[i] == '-' || str[i] == '+')
+	if ((str[i] == ' ') && str[i + 1] == '\0')
+		i++;
+	if ((str[i] == '-' || str[i] == '+') && str[i + 1] != '\0')
 		i++;
 	while (str[i])
 	{
@@ -103,5 +105,16 @@ void	check_input(char **strs)
 		free_split(tmp);
 }
 
+// void	ft_pustrs()
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while ()
+// 	{
+// 		/* code */
+// 	}
+
+// }
 //BUT: Checker les inputs
 //ATTENTION on commence avec i = 1 car on veut exclure le a.out!!!!!

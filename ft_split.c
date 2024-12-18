@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:59:32 by daafonso          #+#    #+#             */
-/*   Updated: 2024/12/16 21:44:39 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/17 20:19:52 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,24 +109,24 @@ char	**ft_split(char const *s, char c)
 	return (str);
 }
 
-/*int	main(void)
-{
-	size_t	i;
-	char	*str = " Arya Stark: Winter is coming";
-	char	sep = ' ';
-	char	**result;
+// int	main(void)
+// {
+// 	size_t	i;
+// 	char	*str = " Arya Stark: Winter is coming";
+// 	char	sep = ' ';
+// 	char	**result;
 
-	i = 0;
-	result = ft_split(str, sep); //tableau de string
-	while (result[i] != NULL)
-	{
-		printf("%s\n", result[i]);
-		free(result[i]); //libere chaque string
-		i++;
-	}
-	free(result); //libere le tableau entier de string
-	return (0);
-}*/
+// 	i = 0;
+// 	result = ft_split(str, sep); //tableau de string
+// 	while (result[i] != NULL)
+// 	{
+// 		printf("%s\n", result[i]);
+// 		free(result[i]); //libere chaque string
+// 		i++;
+// 	}
+// 	free(result); //libere le tableau entier de string
+// 	return (0);
+// }
 //BUT: Decoupe un string en un tableau de string
 // s = string, c = delimiteur
 //Return un tableau de string

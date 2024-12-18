@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/16 21:06:12 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/17 20:31:16 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, char **argv)
 		else
 			sort_radix(stack_a, stack_b, stack_size);
 	}
-	ft_putlst(*stack_a, *stack_b);
+	//ft_putlst(*stack_a, *stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -57,6 +57,8 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 
 	stack_b = NULL;
+	if (argv[1][0] == '\0')
+		error_exit();
 	if (argc > 1)
 	{
 		push_swap(&stack_a, &stack_b, argv);
@@ -65,3 +67,4 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+//Main: verifie si une chaine vide est passée ""
