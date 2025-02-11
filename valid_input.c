@@ -6,7 +6,7 @@
 /*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/02/11 19:53:08 by daafonso         ###   ########.fr       */
+/*   Updated: 2025/02/11 20:39:08 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,10 @@ void	check_input(char **strs)
 	int		split_used;
 	long	nb;
 	int		i;
+<<<<<<< HEAD
 	int		nb_len;
+=======
+>>>>>>> refs/remotes/origin/main
 
 	i = 0;
 	tmp = preprocess_args(strs, &split_used);
@@ -94,9 +97,13 @@ void	check_input(char **strs)
 	while (tmp[i])
 	{
 		nb = ft_atoi(tmp[i]);
+<<<<<<< HEAD
 		nb_len = nblen(nb);
 		if ((nb > INT_MAX || nb < INT_MIN)
 			|| nb_len > 11 || !validate_args(tmp))
+=======
+		if ((nb > INT_MAX || nb < INT_MIN) || !validate_args(tmp))
+>>>>>>> refs/remotes/origin/main
 		{
 			if (split_used)
 				free_split(tmp);
