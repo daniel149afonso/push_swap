@@ -6,31 +6,26 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:16:30 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/30 14:22:31 by daniel149af      ###   ########.fr       */
+/*   Updated: 2024/12/18 18:09:52 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_exit(t_stack **stack_a)
+int	count_args(char **argv)
 {
-	if (*stack_a)
-		free_stack(stack_a);
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
-}
+	int	i;
+	int	j;
 
-void	free_stack(t_stack **stack_a)
-{
-	t_stack	*tmp;
-
-	while (*stack_a)
+	i = 0;
+	while (argv[i])
 	{
-		tmp = (*stack_a)->next;
-		free(*stack_a);
-		*stack_a = tmp;
+		j = 0;
+		while (argv[i][j])
+			j++;
+		i++;
 	}
-	*stack_a = NULL;
+	return (i);
 }
 
 long	ft_atoi(const char *str)
@@ -90,3 +85,15 @@ int	is_sorted(t_stack *stack)
 	}
 	return (sorted);
 }
+
+int	is_empty_string(const char *str)
+{
+	while (*str)
+	{
+		if (!(*str == ' ' || (*str >= 9 && *str <= 13)))
+			return (0);
+		str++;
+	}
+	return (1);
+}
+//Is_empty_string: verifie si la chaine vide ou seulement espaces

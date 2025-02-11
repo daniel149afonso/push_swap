@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
+/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:42:07 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/01 20:30:41 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/02/11 19:51:11 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 //LIBRAIRIES
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 //STACK TYPE
 typedef struct s_stack
@@ -51,7 +50,8 @@ void	do_rrr(t_stack **stack_a, t_stack **stack_b);
 //SORTS ALGO
 void	sort3(t_stack **stack_a);
 void	sort5(t_stack **stack_a, t_stack **stack_b);
-int		find_max(t_stack *stack_a);
+void	sort_radix(t_stack **stack_a, t_stack **stack_b, int size_stack);
+int		find_max_value(t_stack *stack_a);
 
 //STACKS
 t_stack	*stack_new(int value);
@@ -62,8 +62,17 @@ t_stack	*get_stack_before_bottom(t_stack *stack_a);
 //UTILS
 long	ft_atoi(const char *str);
 void	ft_putstr_fd(char *s, int fd);
-void	error_exit(t_stack **stack_a);
-void	free_stack(t_stack **stack_a);
 int		is_sorted(t_stack *stack);
+char	**ft_split(char const *s, char c);
+int		is_empty_string(const char *str);
+int		nblen(long nb);
 
+//CHECK INPUTS
+void	check_input(char **strs);
+int		count_args(char **argv);
+
+//FREE AND ERROR
+void	error_exit(void);
+void	free_split(char **split);
+void	free_stack(t_stack **stack_a);
 #endif

@@ -6,7 +6,7 @@
 #    By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 15:48:06 by daafonso          #+#    #+#              #
-#    Updated: 2024/12/04 15:48:08 by daafonso         ###   ########.fr        #
+#    Updated: 2025/02/11 19:51:51 by daafonso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,30 +21,33 @@ SRC = push_swap.c \
 		stack.c \
 		utils.c \
 		sort3.c \
-		sort5.c
+		sort5.c \
+		sort_radix.c \
+		valid_input.c \
+		ft_split.c \
+		free_error.c \
+		utils2.c
 
-OBJS =	$(SRC:.c=.o)
+OBJS = $(SRC:.c=.o)
 
-GCC = 	gcc
-
-FLAGS = -Werror -Wall -Wextra
-
+CC = gcc
+CFLAGS = -Werror -Wall -Wextra
 RM = rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-				$(GCC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-		$(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-			$(RM) ${NAME}
+	$(RM) $(NAME)
 
-re:		fclean all
+re: fclean all
 
 .PHONY: all clean fclean re

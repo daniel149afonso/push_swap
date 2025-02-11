@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialization.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
+/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:23:42 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/01 15:26:32 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/02/11 19:30:25 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,24 @@ t_stack	*full_stack_values(char **strs)
 	t_stack		*stack_a;
 	long		nb;
 	int			i;
+	char		**tmp;
 
-	i = 1;
-	while (strs[i])
+	if (count_args(strs) == 2)
+		tmp = ft_split(strs[1], ' ');
+	else
+		tmp = strs + 1;
+	i = 0;
+	while (tmp[i])
 	{
-		nb = ft_atoi(strs[i]);
-		if (nb > INT_MAX || nb < INT_MIN)
-			error_exit(&stack_a);
-		if (i == 1)
+		nb = ft_atoi(tmp[i]);
+		if (i == 0)
 			stack_a = stack_new((int)nb);
 		else
 			stack_add_bottom(&stack_a, stack_new((int)nb));
 		i++;
 	}
+	if (count_args(strs) == 2)
+		free_split(tmp);
 	return (stack_a);
 }
 
@@ -52,7 +57,7 @@ void	assign_index(t_stack *stack_a, int stack_size)
 	t_stack	*highest;
 	int		max_value;
 
-	if (!stack_a)
+	if (!stack_a || stack_size <= 0)
 		return ;
 	while (stack_size-- > 0)
 	{
@@ -70,12 +75,13 @@ void	assign_index(t_stack *stack_a, int stack_size)
 			}
 			tmp = tmp->next;
 		}
-		highest->index = stack_size;
+		if (highest != NULL)
+			highest->index = stack_size;
 	}
 }
 //BUT:
 //Full_stack: remplit la liste avec les valeurs passés en param
-//Il crée un nouvel elem et l'ajoute à la fin de la liste
+//Il crée un nouvel elem et ajoute les autres à la fin de la liste
 //Check: entier min et max
 //-------
 //assign_index: donne un index à chaque valeur decroissante
