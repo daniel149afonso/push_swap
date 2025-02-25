@@ -6,7 +6,7 @@
 /*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:42:07 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/02/11 20:47:51 by daafonso         ###   ########.fr       */
+/*   Updated: 2025/02/11 19:51:11 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_stack	*get_stack_bottom(t_stack *stack_a);
 t_stack	*get_stack_before_bottom(t_stack *stack_a);
 
 //UTILS
-long	ft_atol(const char *str);
+long	ft_atoi(const char *str);
 void	ft_putstr_fd(char *s, int fd);
 int		is_sorted(t_stack *stack);
 char	**ft_split(char const *s, char c);

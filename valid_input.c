@@ -6,7 +6,7 @@
 /*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/02/11 20:51:45 by daafonso         ###   ########.fr       */
+/*   Updated: 2025/02/11 19:53:08 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	check_doubles(char **strs)
 		j = i + 1;
 		while (j < len)
 		{
-			if (ft_atol(strs[i]) == ft_atol(strs[j]))
+			if (ft_atoi(strs[i]) == ft_atoi(strs[j]))
 				return (1);
 			j++;
 		}
@@ -93,7 +93,7 @@ void	check_input(char **strs)
 		error_exit();
 	while (tmp[i])
 	{
-		nb = ft_atol(tmp[i]);
+		nb = ft_atoi(tmp[i]);
 		nb_len = nblen(nb);
 		if ((nb > INT_MAX || nb < INT_MIN)
 			|| nb_len > 11 || !validate_args(tmp))

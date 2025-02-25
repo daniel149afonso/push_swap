@@ -6,7 +6,7 @@
 /*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:23:42 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/02/11 20:48:22 by daafonso         ###   ########.fr       */
+/*   Updated: 2025/02/11 19:30:25 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stack	*full_stack_values(char **strs)
 	i = 0;
 	while (tmp[i])
 	{
-		nb = ft_atol(tmp[i]);
+		nb = ft_atoi(tmp[i]);
 		if (i == 0)
 			stack_a = stack_new((int)nb);
 		else
