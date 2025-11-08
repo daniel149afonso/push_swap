@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:34:40 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/11/08 02:46:37 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 03:01:07 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,3 +69,4 @@ void	sort_radix(t_stack **stack_a, t_stack **stack_b, int size_stack)
 		i++;
 	}
 }
+//But:trier pile en utilisant index plutot que valeurs pour traiter bits negatif

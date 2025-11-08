@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/11/08 02:46:34 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 03:00:47 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void	check_input(char **strs)
 	int		split_used;
 	long	nb;
 	int		i;
+	int		nb_len;
 
 	i = 0;
 	tmp = preprocess_args(strs, &split_used);
@@ -93,7 +94,9 @@ void	check_input(char **strs)
 	while (tmp[i])
 	{
 		nb = ft_atoi(tmp[i]);
-		if ((nb > INT_MAX || nb < INT_MIN) || !validate_args(tmp))
+		nb_len = nblen(nb);
+		if ((nb > INT_MAX || nb < INT_MIN)
+			|| nb_len > 11 || !validate_args(tmp))
 		{
 			if (split_used)
 				free_split(tmp);
@@ -104,17 +107,5 @@ void	check_input(char **strs)
 	if (split_used)
 		free_split(tmp);
 }
-
-// void	ft_pustrs()
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while ()
-// 	{
-// 		/* code */
-// 	}
-
-// }
 //BUT: Checker les inputs
 //ATTENTION on commence avec i = 1 car on veut exclure le a.out!!!!!

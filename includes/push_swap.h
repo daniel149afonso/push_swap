@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
+/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:42:07 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/18 18:10:26 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/02/11 19:51:11 by daafonso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 //LIBRAIRIES
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 //STACK TYPE
 typedef struct s_stack
@@ -65,8 +64,8 @@ long	ft_atoi(const char *str);
 void	ft_putstr_fd(char *s, int fd);
 int		is_sorted(t_stack *stack);
 char	**ft_split(char const *s, char c);
-void	ft_putlst(t_stack *stack_a, t_stack *stack_b);//a supprimer
 int		is_empty_string(const char *str);
+int		nblen(long nb);
 
 //CHECK INPUTS
 void	check_input(char **strs);
