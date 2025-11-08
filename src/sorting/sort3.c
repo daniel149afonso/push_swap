@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 19:42:29 by daafonso          #+#    #+#             */
-/*   Updated: 2024/12/08 17:00:54 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:52:55 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	find_max_value(t_stack *stack_a)
 {

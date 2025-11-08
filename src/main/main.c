@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/18 18:26:51 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:46:18 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_putlst(t_stack *stack_a, t_stack *stack_b)
 {
 	printf("Stack_a: ");
 	while (stack_a)
 	{
-		printf("%d ,", stack_a->value);
+		printf("%d, ", stack_a->value);
 		stack_a = stack_a->next;
 	}
 	printf("\nStack_b: ");
@@ -48,7 +48,7 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, char **argv)
 		else
 			sort_radix(stack_a, stack_b, stack_size);
 	}
-	//ft_putlst(*stack_a, *stack_b);
+	ft_putlst(*stack_a, *stack_b);
 }
 
 int	main(int argc, char **argv)

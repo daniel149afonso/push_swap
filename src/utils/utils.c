@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:16:30 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/18 18:09:52 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:53:14 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	count_args(char **argv)
 {

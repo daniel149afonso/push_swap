@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 15:27:47 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/28 15:00:53 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:46:27 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	rotate(t_stack **stack)
 {

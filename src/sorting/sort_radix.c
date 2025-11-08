@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:34:40 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/08 17:11:49 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:46:37 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	find_max_bits(int max)
 {

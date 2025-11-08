@@ -6,49 +6,49 @@
 #    By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 15:48:06 by daafonso          #+#    #+#              #
-#    Updated: 2024/12/16 21:29:22 by daniel149af      ###   ########.fr        #
+#    Updated: 2025/11/08 02:54:31 by daniel149af      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME		= push_swap
 
-SRC = push_swap.c \
-		push.c \
-		swap.c \
-		rotate.c \
-		reverse_rotate.c \
-		initialization.c \
-		stack.c \
-		utils.c \
-		sort3.c \
-		sort5.c \
-		sort_radix.c \
-		valid_input.c \
-		ft_split.c \
-		free_error.c
+SRC_DIR		= src
+OBJ_DIR		= obj
 
-OBJS =	$(SRC:.c=.o)
+SRC_FILES	= main/main.c \
+			  move/push.c move/swap.c move/rotate.c move/reverse_rotate.c \
+			  init/initialization.c \
+			  stack/stack.c \
+			  utils/utils.c utils/ft_split.c utils/free_error.c \
+			  sorting/sort3.c sorting/sort5.c sorting/sort_radix.c \
+			  parsing/valid_input.c
 
-GCC = 	gcc
+SRCS		= $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-FLAGS = -Werror -Wall -Wextra
+CC			= gcc
+CFLAGS		= -Wall -Wextra -Werror
+RM			= rm -rf
 
-RM = rm -rf
+GREEN		= \033[1;92m
+RESET		= \033[0m
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-				$(GCC) $(FLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@echo "$(GREEN)Compilation successfully ✅$(RESET)"
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-		$(RM) $(OBJS)
+	@$(RM) $(OBJ_DIR)
 
 fclean: clean
-			$(RM) ${NAME}
+	@$(RM) $(NAME)
 
-re:		fclean all
+re: fclean all
 
 .PHONY: all clean fclean re

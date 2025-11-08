@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:59:32 by daafonso          #+#    #+#             */
-/*   Updated: 2024/12/17 20:19:52 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:53:10 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_freeall(char **s)
 {

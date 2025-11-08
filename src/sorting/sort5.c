@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 18:49:58 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/16 21:43:21 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:52:58 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	find_min_value(t_stack *stack_a)
 {

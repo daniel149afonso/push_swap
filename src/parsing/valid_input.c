@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 17:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/17 19:31:23 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:46:34 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	check_nbr(char *str)
 {

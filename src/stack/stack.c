@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:45:15 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/11/30 14:22:39 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:53:02 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_stack	*stack_new(int value)
 {

@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:23:42 by daniel149af       #+#    #+#             */
-/*   Updated: 2024/12/16 20:28:56 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:52:11 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_stack	*full_stack_values(char **strs)
 {

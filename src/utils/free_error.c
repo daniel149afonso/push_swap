@@ -6,11 +6,11 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:38:17 by daafonso          #+#    #+#             */
-/*   Updated: 2024/12/16 15:26:21 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 02:53:07 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	error_exit(void)
 {
