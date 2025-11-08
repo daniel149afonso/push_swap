@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:40:43 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/11/08 03:00:21 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/08 03:14:39 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, char **argv)
 		else
 			sort_radix(stack_a, stack_b, stack_size);
 	}
-<<<<<<< HEAD:src/main/main.c
-	ft_putlst(*stack_a, *stack_b);
-=======
->>>>>>> 704e01ab5eccc42292607bf1997665b28211c7e6:push_swap.c
 }
 
 int	main(int argc, char **argv)

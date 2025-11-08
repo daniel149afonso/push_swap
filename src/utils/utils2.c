@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daafonso <daafonso@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:44:59 by daafonso          #+#    #+#             */
-/*   Updated: 2025/02/11 19:58:00 by daafonso         ###   ########.fr       */
+/*   Updated: 2025/11/08 03:04:43 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	nblen(long nb)
 {
