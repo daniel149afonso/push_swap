@@ -69,13 +69,13 @@ KO
 If you have a script like test_push_swap.sh, you can use it to run multiple tests automatically.
 
 Make sure it's executable:
-
+```bash
 chmod +x test_push_swap.sh
-
+```
 Then run:
-
+```bash
 ./test_push_swap.sh ./push_swap
-
+```
 It will test:
 
 Parsing errors
@@ -84,10 +84,10 @@ Sorting for small and large inputs
 
 Display green [OK] or red [KO] depending on the result
 
-🛠️ Project Structure
+### 🛠️ Project Structure
 
 Your src/ folder may include subfolders like:
-
+```bash
 src/
 ├── main/
 ├── move/
@@ -96,10 +96,10 @@ src/
 ├── parsing/
 ├── init/
 ├── utils/
-
+```
 Organize your source files by functionality (moves, stack operations, input parsing, sorting algorithms, etc.).
 
-🚀 Tips
+### 🚀 Tips
 
 Optimize for 3, 5, 100, and 500 elements
 
@@ -107,7 +107,7 @@ Use different algorithms depending on input size (e.g. hardcoded for 3/5, radix 
 
 Always check for input errors (non-numeric, duplicates, overflows)
 
-📚 Resources
+### 📚 Resources
 
 Subject PDF: available on your intra
 Visualizer: https://pteufel.github.io/push-swap-visualizer/
